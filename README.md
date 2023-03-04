@@ -9,11 +9,16 @@ Fault detection of Induction motors using the current signals is a growing techn
 
 ## ZigBee
 
-- A wireless technology for high -level communication protocols
-- Low power consumption and cheaper than WPANs (eg. bluetooth or Wi-Fi)
-- ZigBee Coordinator: Forms root of the network tree, acts as coordinator in each network
-- ZigBee Router: Acts as intermediate router, passes data from other devices
-- ZigBee End Device: Talks to parent node i.e., coordinator and router
+In the current world, we have many high data rate communication techniques available, but none of these are able to meet the communication standards of sensors and control devices. These communication standards require high data rate at low-latency and low-energy consumption  even for smaller bandwidths. Zigbee technology is a wireless low power and low cost technology .It has excellent and superb characteristics which have made this communication most suitable for embedded applications ,home automation etc. It is especially built for sensor networks on IEEE 802.15.4 standard for wireless personal area networks (WPANs), . It is a product from Zigbee alliance. This communication technology defines physical and Media Access Control (MAC) layers for handling many devices at low-data rates. Zigbee WPANs work at 868 MHz, 902-928 MHz and 2.4 GHz frequencies. The best suited data rate is 250 kbps for periodic or intermediate two way transmission of data between controllers and sensors . Zigbee is a  low-cost and power network mostly deployed to control and monitor areas where we need to cover only 10-100 meters within the range. This is a less expensive communication system and it is simpler than other proprietary short-range wireless sensor networks  as Bluetooth and Wi-Fi.
+
+Zigbee system structure mainly has three different types of devices 
+●	**Zigbee coordinator**: This forms the root of the network. The Mandatory node for all zigbee networks which has all the information of the network including the keys and acts as a trust centre  playing a key role in the security. This device can never sleep.
+●	**Zigbee Router**:  This node can run an application function as well as act as a relay station for other zigbee devices in the network. The devices on this node can never sleep too.
+●	**End device**:  End devices have a very limited work which is to communicate with the parent nodes such that the battery power is saved. These device can sleep to save power.
+
+In the network currently implemented, there are only two nodes. One acting as the coordinator at the ground station and the other acting as an End point near the sensors. We used 802.15.4 protocol to achieve higher point to point transmission speed but this restricts the network to be only a point to point with no possibility of forming meshes of nodes. 
+<img width="401" alt="image" src="https://user-images.githubusercontent.com/22619455/222922899-6fad0005-23b9-4342-946a-90e900fa86d3.png">
+
 
 ### ZigBee Protocol Architecture:
 <img width="432" alt="image" src="https://user-images.githubusercontent.com/22619455/222922246-b63e2497-29d4-4cfa-bb84-de06df770be4.png">
@@ -46,6 +51,8 @@ Fault detection of Induction motors using the current signals is a growing techn
 
 ## Data Processing
 
+Data needs to be transmitted from Raspberry to a local computer. Artificial neural networks is trained to check the condition of the machine,whether it is in healthy or faulty state. In simple terms, Zigbees are used for wireless transmission from raspberry to computer where fault detection and analysis is done. 
+
 Transmitting high frequency data using wireless medium economically is unrealistic due to the datacap on the transmission modules. Hence, features like skewness and kurtosis are extracted at regular intervals from the input stream before the transmission.
 The data acquisition system samples vibration data at 10 kHz in file format of .lvm extension in one second which are then sent as only 10 data points with best and minimum possible features.
 These features are converted to .csv extension and then read by python as DataFrame which are then transferred through wireless medium.
@@ -73,27 +80,25 @@ Random forest algorithm is a supervised classification algorithm.this algorithm 
 
 ## Feature Selection
 
-Feature selection is done by computing the ANOVA F-value for the provided sample of all the features.
+Here we will be training three different models on the training dataset and testing the performance of the trained model on a test dataset. The feature selection for the dataset is varied from 3 features to 12 features out of maximum 15 features and their results are shown as below.
+
+- Best 3 features as per our model are standard deviation, skewness and RMS value as per our anova test:
+<img width="311" alt="image" src="https://user-images.githubusercontent.com/22619455/222922677-88fcadd7-1e46-4813-a156-bca97292cca4.png">
+Pair Plot:
+<img width="397" alt="image" src="https://user-images.githubusercontent.com/22619455/222922689-8eac8f43-3bba-472d-a1a4-05deb743de8b.png">
+
+- Best 6 features as per our model are standard deviation, skewness, RMS value, max, pk-pk, and Margin factor as per our anova test:
+<img width="340" alt="image" src="https://user-images.githubusercontent.com/22619455/222922732-bea57e31-f08f-448e-892a-0934c00582d4.png">
+
+- Best 9 features in our model are standard deviation, skewness, RMS value, max, pk-pk, Margin factor , kurtosis, min and Impulse factor as per our anova test:
+<img width="358" alt="image" src="https://user-images.githubusercontent.com/22619455/222922784-2e6875bf-3b0b-48fc-b5a7-8472f2f86993.png">
+Pair Plot:
+<img width="467" alt="image" src="https://user-images.githubusercontent.com/22619455/222922790-0080ab37-39b8-4018-b367-2597cbf6c9ea.png">
 
 - Selecting all 12 features and 3 categorical variables(current)
-<img width="807" alt="image" src="https://user-images.githubusercontent.com/22619455/222922091-ff70fcc6-fb16-4409-b865-492ef07ded31.png">
+<img width="305" alt="image" src="https://user-images.githubusercontent.com/22619455/222922812-318d2714-6955-459a-a54e-c37644630599.png">
 
-- Selecting all 12 features without categorical variables.
-<img width="822" alt="image" src="https://user-images.githubusercontent.com/22619455/222922115-91f39378-00c9-4eea-809e-fb2dbc79f72c.png">
-
-- Selecting best 9 features in our model are standard deviation, skewness, RMS value, max, pk-pk, Margin factor , kurtosis, min and Impulse factor as per our anova test.
-<img width="809" alt="image" src="https://user-images.githubusercontent.com/22619455/222922143-c8395f73-c180-4578-904d-44f9f6532f42.png">
-
-- Selecting best 6 features in our model are standard deviation, skewness, RMS value, max, pk-pk, and Margin factor as per our anova test.
-<img width="803" alt="image" src="https://user-images.githubusercontent.com/22619455/222922176-74be555f-01fe-42fa-b2fd-273c29b405b2.png">
-
-- Selecting best 3 features in our model are standard deviation, skewness and RMS value as per our anova test.
-<img width="788" alt="image" src="https://user-images.githubusercontent.com/22619455/222922201-fd6edc38-c5c8-43c2-958a-da1fc68dab1e.png">
-
-## Pair plot of best 3 features
-<img width="332" alt="image" src="https://user-images.githubusercontent.com/22619455/222922211-97a886bf-0301-49ab-802c-f1b06a410de4.png">
-
-
+- **Conclusion**: 3 best features model is selected as accuracy obtained is high and less data needs to be transferred via Zigbee.
 
 
 
