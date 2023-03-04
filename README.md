@@ -7,6 +7,36 @@ Fault detection of Induction motors using the current signals is a growing techn
 
 ![blockdig](https://user-images.githubusercontent.com/22619455/222921899-797798e2-0eb6-48e7-b79c-d6c4025692e4.png)
 
+## ZigBee
+
+- A wireless technology for high -level communication protocols
+- Low power consumption and cheaper than WPANs (eg. bluetooth or Wi-Fi)
+- ZigBee Coordinator: Forms root of the network tree, acts as coordinator in each network
+- ZigBee Router: Acts as intermediate router, passes data from other devices
+- ZigBee End Device: Talks to parent node i.e., coordinator and router
+
+### ZigBee Protocol Architecture:
+<img width="432" alt="image" src="https://user-images.githubusercontent.com/22619455/222922246-b63e2497-29d4-4cfa-bb84-de06df770be4.png">
+
+### Transmission of data using ZigBee Protocol
+
+- API used : digi.xbee
+- Digi.xbee uses pySerial for serial communication between devices
+- Specifications:250Kbps
+- Achieved:48bps
+- Each row in dataframe is sent as a separate bytearray.
+
+## Transmitter’s side code
+
+<img width="323" alt="image" src="https://user-images.githubusercontent.com/22619455/222922319-a16c4369-861c-47fa-8fca-813c83a623b6.png">
+<img width="331" alt="image" src="https://user-images.githubusercontent.com/22619455/222922326-4e77e770-6f29-4e6e-a5bd-d96575c5ef49.png">
+
+## Receiver’s Side Code
+
+<img width="336" alt="image" src="https://user-images.githubusercontent.com/22619455/222922335-4b9a5529-e074-4265-a0e9-652d65c1dc6c.png">
+<img width="287" alt="image" src="https://user-images.githubusercontent.com/22619455/222922338-915a4c9c-6e4d-4975-a579-7654cfe47a36.png">
+
+
 ## Steps Involved
 
 - **Data Acquisition**  - DAQ is used to transmit data from the sensors to raspberry using wired connection.
@@ -63,34 +93,6 @@ Feature selection is done by computing the ANOVA F-value for the provided sample
 ## Pair plot of best 3 features
 <img width="332" alt="image" src="https://user-images.githubusercontent.com/22619455/222922211-97a886bf-0301-49ab-802c-f1b06a410de4.png">
 
-## ZigBee
-
-- A wireless technology for high -level communication protocols
-- Low power consumption and cheaper than WPANs (eg. bluetooth or Wi-Fi)
-- ZigBee Coordinator: Forms root of the network tree, acts as coordinator in each network
-- ZigBee Router: Acts as intermediate router, passes data from other devices
-- ZigBee End Device: Talks to parent node i.e., coordinator and router
-
-### ZigBee Protocol Architecture:
-<img width="432" alt="image" src="https://user-images.githubusercontent.com/22619455/222922246-b63e2497-29d4-4cfa-bb84-de06df770be4.png">
-
-### Transmission of data using ZigBee Protocol
-
-- API used : digi.xbee
-- Digi.xbee uses pySerial for serial communication between devices
-- Specifications:250Kbps
-- Achieved:48bps
-- Each row in dataframe is sent as a separate bytearray.
-
-## Transmitter’s side code
-
-<img width="323" alt="image" src="https://user-images.githubusercontent.com/22619455/222922319-a16c4369-861c-47fa-8fca-813c83a623b6.png">
-<img width="331" alt="image" src="https://user-images.githubusercontent.com/22619455/222922326-4e77e770-6f29-4e6e-a5bd-d96575c5ef49.png">
-
-## Receiver’s Side Code
-
-<img width="336" alt="image" src="https://user-images.githubusercontent.com/22619455/222922335-4b9a5529-e074-4265-a0e9-652d65c1dc6c.png">
-<img width="287" alt="image" src="https://user-images.githubusercontent.com/22619455/222922338-915a4c9c-6e4d-4975-a579-7654cfe47a36.png">
 
 
 
