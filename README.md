@@ -17,6 +17,7 @@ Zigbee system structure mainly has three different types of devices
 ●	**End device**:  End devices have a very limited work which is to communicate with the parent nodes such that the battery power is saved. These device can sleep to save power.
 
 In the network currently implemented, there are only two nodes. One acting as the coordinator at the ground station and the other acting as an End point near the sensors. We used 802.15.4 protocol to achieve higher point to point transmission speed but this restricts the network to be only a point to point with no possibility of forming meshes of nodes. 
+
 <img width="401" alt="image" src="https://user-images.githubusercontent.com/22619455/222922899-6fad0005-23b9-4342-946a-90e900fa86d3.png">
 
 
@@ -85,7 +86,7 @@ Here we will be training three different models on the training dataset and test
 - Best 3 features as per our model are standard deviation, skewness and RMS value as per our anova test:
 <img width="311" alt="image" src="https://user-images.githubusercontent.com/22619455/222922677-88fcadd7-1e46-4813-a156-bca97292cca4.png">
 Pair Plot:
-<img width="397" alt="image" src="https://user-images.githubusercontent.com/22619455/222922689-8eac8f43-3bba-472d-a1a4-05deb743de8b.png">
+<img width="790" alt="image" src="https://user-images.githubusercontent.com/22619455/222923022-d1aafc2c-9098-4c62-a7b7-99569407e178.png">
 
 - Best 6 features as per our model are standard deviation, skewness, RMS value, max, pk-pk, and Margin factor as per our anova test:
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/22619455/222922732-bea57e31-f08f-448e-892a-0934c00582d4.png">
@@ -93,7 +94,7 @@ Pair Plot:
 - Best 9 features in our model are standard deviation, skewness, RMS value, max, pk-pk, Margin factor , kurtosis, min and Impulse factor as per our anova test:
 <img width="358" alt="image" src="https://user-images.githubusercontent.com/22619455/222922784-2e6875bf-3b0b-48fc-b5a7-8472f2f86993.png">
 Pair Plot:
-<img width="467" alt="image" src="https://user-images.githubusercontent.com/22619455/222922790-0080ab37-39b8-4018-b367-2597cbf6c9ea.png">
+<img width="908" alt="image" src="https://user-images.githubusercontent.com/22619455/222923031-4942f61b-2a74-415a-9b83-9615ab845dad.png">
 
 - Selecting all 12 features and 3 categorical variables(current)
 <img width="305" alt="image" src="https://user-images.githubusercontent.com/22619455/222922812-318d2714-6955-459a-a54e-c37644630599.png">
