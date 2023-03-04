@@ -9,10 +9,10 @@ Fault detection of Induction motors using the current signals is a growing techn
 
 ## Steps Involved
 
-- Data Acquisition  - DAQ is used to transmit data from the sensors to raspberry using wired connection.
-- Data Processing - Based on sampling frequency (here 10kHz) we process the data, extract features and transmit relevant features through wireless connection.
-- Data Transmission - Zigbees are used for wireless transmission from raspberry to computer where fault detection and analysis is done. 
-- Classification Model - Artificial Neural network, Support vector Machine and random forest models are used for Fault Detection and Diagnosis.
+- **Data Acquisition**  - DAQ is used to transmit data from the sensors to raspberry using wired connection.
+- **Data Processing** - Based on sampling frequency (here 10kHz) we process the data, extract features and transmit relevant features through wireless connection.
+- **Data Transmission** - Zigbees are used for wireless transmission from raspberry to computer where fault detection and analysis is done. 
+- **Classification Model** - Artificial Neural network, Support vector Machine and random forest models are used for Fault Detection and Diagnosis.
 
 ## Data Processing
 
@@ -22,23 +22,23 @@ These features are converted to .csv extension and then read by python as DataFr
 
 ## Features
 
-- Mean(x̅):The arithmetic mean (or simply mean) of a sample , is the sum of the sampled values divided by the number of items in the example.
-- Standard deviation(σ):The Standard Deviation is a measure of how spread out numbers are.Its symbol is σ(the greek letter sigma).
-- Skewness:Skewness essentially measures the relative size of the two tails.
-- Shape factor :It is the  value that is affected by an object's Shape but is independent of its dimensions. 
-- Impulse Factor:  It is the maximum value divided by the mean of the absolute values of data entries.
-- Margin Factor:  It is the maximum value divided by the square of the mean of the absolute values of data entries.
-- Current: current source of I1,I2,I3 are considered as 3 separate categorical features.
+- **Mean(x̅)**:The arithmetic mean (or simply mean) of a sample , is the sum of the sampled values divided by the number of items in the example.
+- **Standard deviation(σ)**:The Standard Deviation is a measure of how spread out numbers are.Its symbol is σ(the greek letter sigma).
+- **Skewness**:Skewness essentially measures the relative size of the two tails.
+- **Shape factor** :It is the  value that is affected by an object's Shape but is independent of its dimensions. 
+- **Impulse Factor**:  It is the maximum value divided by the mean of the absolute values of data entries.
+- **Margin Factor**:  It is the maximum value divided by the square of the mean of the absolute values of data entries.
+- **Current**: current source of I1,I2,I3 are considered as 3 separate categorical features.
 
 In total we extrapolated 15 features from dataset which will be reduced using feature selection.
 
 ## Classification Models
 
-- Artificial Neural Network
+- **Artificial Neural Network**: 
 We trained a model with inputs as the statistical features of the current data and output as the state of the Induction Motor.
-- Support Vector Machines
+- **Support Vector Machines**: 
 In machine learning, support-vector machines are supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis.
-- Random Forests
+- **Random Forests**: 
 Random forest algorithm is a supervised classification algorithm.this algorithm creates the forest with a number of trees.The more number of trees, the more robust the forest looks like.
 
 ## Feature Selection
