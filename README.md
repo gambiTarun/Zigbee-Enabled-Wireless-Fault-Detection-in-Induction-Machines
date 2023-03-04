@@ -99,7 +99,8 @@ Pair Plot:
 - Selecting all 12 features and 3 categorical variables(current)
 <img width="305" alt="image" src="https://user-images.githubusercontent.com/22619455/222922812-318d2714-6955-459a-a54e-c37644630599.png">
 
-- **Conclusion**: 3 best features model is selected as accuracy obtained is high and less data needs to be transferred via Zigbee.
+## Conclusion
+3 best features model is selected as accuracy obtained is high and less data needs to be transferred via Zigbee.
 
 
 
