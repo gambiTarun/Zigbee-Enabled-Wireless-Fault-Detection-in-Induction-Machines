@@ -29,7 +29,7 @@ In the network currently implemented, there are only two nodes. One acting as th
 - API used : digi.xbee
 - Digi.xbee uses pySerial for serial communication between devices
 - Specifications:250Kbps
-- Achieved:48bps
+- Achieved:48Kbps
 - Each row in dataframe is sent as a separate bytearray.
 
 ## Transmitter’s side code
