@@ -1,4 +1,4 @@
-# Data-Compression-and-Transmission-for-Fault-Detection-of-Induction-Machine
+# Zigbee-Enabled Wireless Fault Detection in Induction Machines
 Wireless transmission using Raspberry pi for fault detection and Diagnosis of Stator Winding Faults due to Insulation Failure in Industrial Induction Machine
 
 ## Introduction
